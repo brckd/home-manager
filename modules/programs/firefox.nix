@@ -12,7 +12,7 @@ let
 
 in {
   meta.maintainers =
-    [ maintainers.rycee maintainers.kira-bruneau maintainers.bricked ];
+    [ maintainers.rycee maintainers.kira-bruneau hm.maintainers.bricked ];
 
   imports = [
     (mkFirefoxModule modulePath {
