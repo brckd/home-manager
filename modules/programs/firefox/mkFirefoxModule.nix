@@ -232,7 +232,7 @@ in {
       default = false;
       example = true;
       description = ''
-        Whether to enable ${cfg.name}.${
+        Whether to enable ${name}.${
           optionalString (description != null) " ${description}"
         }
         ${optionalString (!visible)
@@ -257,10 +257,10 @@ in {
         }
       '';
       description = ''
-        The ${cfg.name} package to use. If state version ≥ 19.09 then
-        this should be a wrapped ${cfg.name} package. For earlier state
-        versions it should be an unwrapped ${cfg.name} package.
-        Set to `null` to disable installing ${cfg.name}.
+        The ${name} package to use. If state version ≥ 19.09 then
+        this should be a wrapped ${name} package. For earlier state
+        versions it should be an unwrapped ${name} package.
+        Set to `null` to disable installing ${name}.
       '';
     };
 
@@ -298,7 +298,7 @@ in {
       default = with platforms;
         if isDarwin then darwin.configPath else linux.configPath;
       example = ".mozilla/firefox";
-      description = "Directory containing the ${cfg.name} configuration files.";
+      description = "Directory containing the ${name} configuration files.";
     };
 
     nativeMessagingHosts = optionalAttrs (cfg.vendorPath != null) (mkOption {
@@ -307,7 +307,7 @@ in {
       default = [ ];
       description = ''
         Additional packages containing native messaging hosts that should be
-        made available to ${cfg.name} extensions.
+        made available to ${name} extensions.
       '';
     });
 
@@ -351,7 +351,7 @@ in {
           settings = mkOption {
             type = types.attrsOf (jsonFormat.type // {
               description =
-                "${cfg.name} preference (int, bool, string, and also attrs, list, float as a JSON string)";
+                "${name} preference (int, bool, string, and also attrs, list, float as a JSON string)";
             });
             default = { };
             example = literalExpression ''
@@ -369,9 +369,9 @@ in {
               }
             '';
             description = ''
-              Attribute set of ${cfg.name} preferences.
+              Attribute set of ${name} preferences.
 
-              ${cfg.name} only supports int, bool, and string types for
+              ${name} only supports int, bool, and string types for
               preferences, but home-manager will automatically
               convert all other JSON-compatible values into strings.
             '';
@@ -388,7 +388,7 @@ in {
           userChrome = mkOption {
             type = types.lines;
             default = "";
-            description = "Custom ${cfg.name} user chrome CSS.";
+            description = "Custom ${name} user chrome CSS.";
             example = ''
               /* Hide tab bar in FF Quantum */
               @-moz-document url("chrome://browser/content/browser.xul") {
@@ -407,7 +407,7 @@ in {
           userContent = mkOption {
             type = types.lines;
             default = "";
-            description = "Custom ${cfg.name} user content CSS.";
+            description = "Custom ${name} user content CSS.";
             example = ''
               /* Hide scrollbar in FF Quantum */
               *{scrollbar-width:none !important}
@@ -533,7 +533,7 @@ in {
               default = false;
               description = ''
                 Whether to force replace the existing search
-                configuration. This is recommended since ${cfg.name} will
+                configuration. This is recommended since ${name} will
                 replace the symlink for the search configuration on every
                 launch, but note that you'll lose any existing
                 configuration by enabling this.
@@ -601,7 +601,7 @@ in {
               description = ''
                 Attribute set of search engine configurations. Engines
                 that only have {var}`metaData` specified will
-                be treated as builtin to ${cfg.name}.
+                be treated as builtin to ${name}.
 
                 See [SearchEngine.jsm](https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177)
                 in Firefox's source for available options. We maintain a
@@ -713,7 +713,7 @@ in {
               ]
             '';
             description = ''
-              List of ${cfg.name} add-on packages to install for this profile.
+              List of ${name} add-on packages to install for this profile.
               Some pre-packaged add-ons are accessible from the
               [Nix User Repository](https://github.com/nix-community/NUR).
               Once you have NUR installed run
@@ -722,10 +722,10 @@ in {
               $ nix-env -f '<nixpkgs>' -qaP -A nur.repos.rycee.firefox-addons
               ```
 
-              to list the available ${cfg.name} add-ons.
+              to list the available ${name} add-ons.
 
               Note that it is necessary to manually enable these extensions
-              inside ${cfg.name} after the first installation.
+              inside ${name} after the first installation.
 
               To automatically enable extensions add
               `"extensions.autoDisableScopes" = 0;`
@@ -737,7 +737,7 @@ in {
         };
       }));
       default = { };
-      description = "Attribute set of ${cfg.name} profiles.";
+      description = "Attribute set of ${name} profiles.";
     };
 
     enableGnomeExtensions = mkOption {
