@@ -15,7 +15,8 @@ in {
     [ maintainers.rycee maintainers.kira-bruneau hm.maintainers.bricked ];
 
   imports = [
-    (mkFirefoxModule modulePath {
+    (mkFirefoxModule {
+      inherit modulePath;
       name = "Firefox";
       wrappedPackageName = "firefox";
       unwrappedPackageName = "firefox-unwrapped";

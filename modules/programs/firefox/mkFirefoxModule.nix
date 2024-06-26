@@ -1,5 +1,4 @@
-modulePath:
-{ name, description ? null, wrappedPackageName ? null
+{ modulePath, name, description ? null, wrappedPackageName ? null
 , unwrappedPackageName ? null, platforms, visible ? false }:
 
 { config, lib, pkgs, ... }:
