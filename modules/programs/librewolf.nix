@@ -26,7 +26,7 @@ in {
   imports = [
     (mkFirefoxModule {
       inherit modulePath;
-      name = "Librewolf";
+      name = "LibreWolf";
       wrappedPackageName = "librewolf";
       unwrappedPackageName = "librewolf-unwrapped";
       platforms.linux.configPath = configPath;
