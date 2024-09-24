@@ -66,8 +66,6 @@ in {
         lib.platforms.linux)
     ];
 
-    home.packages = [ cfg.package ];
-
     home.file.".librewolf/librewolf.overrides.cfg" = lib.mkIf (cfg.settings != { }) {
       text = mkOverridesFile cfg.settings;
     };
