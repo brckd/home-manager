@@ -2560,7 +2560,7 @@ attribute set of (values (null, bool, int, string, or float) or a list of values
 See <span class="citerefentry"><span class="refentrytitle">aerc-binds</span>(5)</span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-attribute set of attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma)</p>
+attribute set of (strings concatenated with “\n” or attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -2591,7 +2591,7 @@ use <code class="literal">programs.aerc.extraConfig</code>.
 See <span class="citerefentry"><span class="refentrytitle">aerc-config</span>(5)</span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-attribute set of attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma)</p>
+attribute set of (strings concatenated with “\n” or attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -13420,7 +13420,7 @@ null or package</p>
 <p>Extra lines added to <code class="filename">$HOME/.config/aerc/accounts.conf</code>.</p><p>See <span class="citerefentry"><span class="refentrytitle">aerc-config</span>(5)</span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n” or attribute set of attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma)</p>
+strings concatenated with “\n” or attribute set of (strings concatenated with “\n” or attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -13448,7 +13448,7 @@ strings concatenated with “\n” or attribute set of attribute set of (values 
 Global keybindings can be set in the <code class="literal">global</code> section.</p><p>See <span class="citerefentry"><span class="refentrytitle">aerc-config</span>(5)</span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n” or attribute set of attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma)</p>
+strings concatenated with “\n” or attribute set of (strings concatenated with “\n” or attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -13475,7 +13475,7 @@ strings concatenated with “\n” or attribute set of attribute set of (values 
 <p>Extra lines added to <code class="filename">$HOME/.config/aerc/aerc.conf</code>.</p><p>See <span class="citerefentry"><span class="refentrytitle">aerc-config</span>(5)</span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n” or attribute set of attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma)</p>
+strings concatenated with “\n” or attribute set of (strings concatenated with “\n” or attribute set of (values (null, bool, int, string, or float) or a list of values, that will be joined with a comma))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -14994,6 +14994,767 @@ null or string</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.anki.enable"></a><a class="term" href="options.xhtml#opt-programs.anki.enable"><code class="option">programs.anki.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Anki.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.package"></a><a class="term" href="options.xhtml#opt-programs.anki.package"><code class="option">programs.anki.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The anki package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.anki</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.addons"></a><a class="term" href="options.xhtml#opt-programs.anki.addons"><code class="option">programs.anki.addons</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>List of Anki add-on packages to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  # When the add-on is already available in nixpkgs
+  pkgs.ankiAddons.anki-connect
+
+  # When the add-on is not available in nixpkgs
+  (pkgs.anki-utils.buildAnkiAddon (finalAttrs: {
+    pname = &quot;recolor&quot;;
+    version = &quot;3.1&quot;;
+    src = pkgs.fetchFromGitHub {
+      owner = &quot;AnKing-VIP&quot;;
+      repo = &quot;AnkiRecolor&quot;;
+      rev = finalAttrs.version;
+      sparseCheckout = [ &quot;src/addon&quot; ];
+      hash = &quot;sha256-28DJq2l9DP8O6OsbNQCZ0pm4S6CQ3Yz0Vfvlj+iQw8Y=&quot;;
+    };
+    sourceRoot = &quot;${finalAttrs.src.name}/src/addon&quot;;
+  }))
+
+  # When the add-on needs to be configured
+  pkgs.ankiAddons.passfail2.withConfig {
+    config = {
+      again_button_name = &quot;not quite&quot;;
+      good_button_name = &quot;excellent&quot;;
+    };
+    user_files = ./dir-to-be-merged-into-addon-user-files-dir;
+  };
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.answerKeys"></a><a class="term" href="options.xhtml#opt-programs.anki.answerKeys"><code class="option">programs.anki.answerKeys</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Overrides for choosing what keyboard shortcut activates each
+answer button. The Anki default will be used for ones without an
+override defined.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  {
+    ease = 1;
+    key = &quot;left&quot;;
+  }
+  {
+    ease = 2;
+    key = &quot;up&quot;;
+  }
+  {
+    ease = 3;
+    key = &quot;right&quot;;
+  }
+  {
+    ease = 4;
+    key = &quot;down&quot;;
+  }
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.answerKeys._.ease"></a><a class="term" href="options.xhtml#opt-programs.anki.answerKeys._.ease"><code class="option">programs.anki.answerKeys.*.ease</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Number associated with an answer button.</p><p>By default, 1 = Again, 2 = Hard, 3 = Good, and 4 = Easy.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+signed integer</p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">3</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.answerKeys._.key"></a><a class="term" href="options.xhtml#opt-programs.anki.answerKeys._.key"><code class="option">programs.anki.answerKeys.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keyboard shortcut for this answer button. The shortcut should be in
+the string format used by <a class="link" href="https://doc.qt.io/qt-6/qkeysequence.html"  target="_top">https://doc.qt.io/qt-6/qkeysequence.html</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;3&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.hideBottomBar"></a><a class="term" href="options.xhtml#opt-programs.anki.hideBottomBar"><code class="option">programs.anki.hideBottomBar</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Hide bottom bar during review.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.hideBottomBarMode"></a><a class="term" href="options.xhtml#opt-programs.anki.hideBottomBarMode"><code class="option">programs.anki.hideBottomBarMode</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When to hide the bottom bar when <code class="literal">hideBottomBar</code> is enabled.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “fullscreen”, “always”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;fullscreen&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.hideTopBar"></a><a class="term" href="options.xhtml#opt-programs.anki.hideTopBar"><code class="option">programs.anki.hideTopBar</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Hide top bar during review.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.hideTopBarMode"></a><a class="term" href="options.xhtml#opt-programs.anki.hideTopBarMode"><code class="option">programs.anki.hideTopBarMode</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When to hide the top bar when <code class="literal">hideTopBar</code> is enabled.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “fullscreen”, “always”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;fullscreen&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.language"></a><a class="term" href="options.xhtml#opt-programs.anki.language"><code class="option">programs.anki.language</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Display language. Should be an underscore separated language tag.
+See <a class="link" href="https://github.com/ankitects/anki/blob/main/pylib/anki/lang.py"  target="_top">https://github.com/ankitects/anki/blob/main/pylib/anki/lang.py</a> for
+supported tags.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;en_US&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.legacyImportExport"></a><a class="term" href="options.xhtml#opt-programs.anki.legacyImportExport"><code class="option">programs.anki.legacyImportExport</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Use legacy (pre 2.1.55) import/export handling code.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.minimalistMode"></a><a class="term" href="options.xhtml#opt-programs.anki.minimalistMode"><code class="option">programs.anki.minimalistMode</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Minimalist user interface mode.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.reduceMotion"></a><a class="term" href="options.xhtml#opt-programs.anki.reduceMotion"><code class="option">programs.anki.reduceMotion</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Disable various animations and transitions of the user interface.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.spacebarRatesCard"></a><a class="term" href="options.xhtml#opt-programs.anki.spacebarRatesCard"><code class="option">programs.anki.spacebarRatesCard</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Spacebar (or enter) also answers card.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.style"></a><a class="term" href="options.xhtml#opt-programs.anki.style"><code class="option">programs.anki.style</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Widgets style.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “anki”, “native”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;native&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.autoSync"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.autoSync"><code class="option">programs.anki.sync.autoSync</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Automatically sync on profile open/close.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.autoSyncMediaMinutes"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.autoSyncMediaMinutes"><code class="option">programs.anki.sync.autoSyncMediaMinutes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Automatically sync media every X minutes. Set this to 0 to disable
+periodic media syncing.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or (unsigned integer, meaning &gt;=0)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">15</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.networkTimeout"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.networkTimeout"><code class="option">programs.anki.sync.networkTimeout</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Network timeout in seconds.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or (unsigned integer, meaning &gt;=0)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">60</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.passwordFile"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.passwordFile"><code class="option">programs.anki.sync.passwordFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to a file containing the sync account password.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.syncMedia"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.syncMedia"><code class="option">programs.anki.sync.syncMedia</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Synchronize audio and images too.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.url"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.url"><code class="option">programs.anki.sync.url</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom sync server URL. See <a class="link" href="https://docs.ankiweb.net/sync-server.html"  target="_top">https://docs.ankiweb.net/sync-server.html</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;http://example.com/anki-sync/&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.username"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.username"><code class="option">programs.anki.sync.username</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Sync account username.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;lovelearning@email.com&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.sync.usernameFile"></a><a class="term" href="options.xhtml#opt-programs.anki.sync.usernameFile"><code class="option">programs.anki.sync.usernameFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to a file containing the sync account username.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.theme"></a><a class="term" href="options.xhtml#opt-programs.anki.theme"><code class="option">programs.anki.theme</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Theme to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “followSystem”, “light”, “dark”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;dark&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.uiScale"></a><a class="term" href="options.xhtml#opt-programs.anki.uiScale"><code class="option">programs.anki.uiScale</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>User interface scale.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or integer or floating point number between 0.0 and 1.0 (both inclusive)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">1.0</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.anki.videoDriver"></a><a class="term" href="options.xhtml#opt-programs.anki.videoDriver"><code class="option">programs.anki.videoDriver</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Video driver to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “opengl”, “angle”, “software”, “metal”, “vulkan”, “d3d11”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;opengl&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/anki" target="_top">
+&lt;home-manager/modules/programs/anki&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.anyrun.enable"></a><a class="term" href="options.xhtml#opt-programs.anyrun.enable"><code class="option">programs.anyrun.enable</code>
   </a>
  </span>
@@ -15794,12 +16555,13 @@ null or package</p>
  </span>
 </dt>
 <dd>
-<p>Ashell configuration written to <code class="filename">$XDG_CONFIG_HOME/ashell.yml</code>.
+<p>Ashell configuration written to <code class="filename">$XDG_CONFIG_HOME/ashell/config.toml</code> (0.5.0+)
+or <code class="filename">$XDG_CONFIG_HOME/ashell/config.yaml</code> (&lt;0.5.0).
 For available settings see
-<a class="link" href="https://github.com/MalpenZibo/ashell/tree/0.4.1?tab=readme-ov-file#configuration"  target="_top">https://github.com/MalpenZibo/ashell/tree/0.4.1?tab=readme-ov-file#configuration</a>.</p>
+<a class="link" href="https://github.com/MalpenZibo/ashell?tab=readme-ov-file#configuration"  target="_top">https://github.com/MalpenZibo/ashell?tab=readme-ov-file#configuration</a>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-YAML 1.1 value</p>
+TOML value</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -17837,7 +18599,7 @@ strings concatenated with “\n”</p>
 <p>Environment variables that will be set for the Bash session.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-attribute set</p>
+lazy attribute set of (string or signed integer or absolute path)</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -47850,7 +48612,7 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>How often cleanup is performed.</p><p>The format is described in <a class="link" href="https://www.freedesktop.org/software/systemd/man/systemd.time.html" target="_top"><span class="citerefentry"><span class="refentrytitle">systemd.time</span>(7)</span></a>.</p>
+<p>How often cleanup is performed.</p><p>On linux the format is described in <a class="link" href="https://www.freedesktop.org/software/systemd/man/systemd.time.html" target="_top"><span class="citerefentry"><span class="refentrytitle">systemd.time</span>(7)</span></a>.</p><p>On Darwin it must be one of: hourly, daily, weekly, monthly, semiannually, annually, which are implemented as defined in <a class="link" href="https://www.freedesktop.org/software/systemd/man/systemd.time.html" target="_top"><span class="citerefentry"><span class="refentrytitle">systemd.time</span>(7)</span></a>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (optionally newline-terminated) single-line string</p>
@@ -54422,6 +55184,159 @@ positive integer, meaning &gt;0</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/qcal.nix" target="_top">
 &lt;home-manager/modules/programs/qcal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.enable"></a><a class="term" href="options.xhtml#opt-programs.quickshell.enable"><code class="option">programs.quickshell.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable quickshell, a flexbile QtQuick-based desktop shell toolkit…</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.package"></a><a class="term" href="options.xhtml#opt-programs.quickshell.package"><code class="option">programs.quickshell.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The quickshell package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.quickshell</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.activeConfig"></a><a class="term" href="options.xhtml#opt-programs.quickshell.activeConfig"><code class="option">programs.quickshell.activeConfig</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The name of the config to use.</p><p>If <code class="literal">null</code>, quickshell will attempt to use a config located in <code class="literal">$XDG_CONFIG_HOME/quickshell</code> instead of one of the named sub-directories.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.configs"></a><a class="term" href="options.xhtml#opt-programs.quickshell.configs"><code class="option">programs.quickshell.configs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A set of configs to include in the quickshell config directory. The key is the name of the config.</p><p>The configuration that quickshell should use can be specified with the <code class="literal">activeConfig</code> option.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.systemd.enable"></a><a class="term" href="options.xhtml#opt-programs.quickshell.systemd.enable"><code class="option">programs.quickshell.systemd.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable quickshell systemd service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.quickshell.systemd.target"></a><a class="term" href="options.xhtml#opt-programs.quickshell.systemd.target"><code class="option">programs.quickshell.systemd.target</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The systemd target that will automatically start quickshell.</p><p>If you set this to a WM-specific target, make sure that systemd integration for that WM is enabled (e.g. <code class="literal">wayland.windowManager.hyprland.systemd.enable</code>). <span class="strong"><strong>This is typically true by default</strong></span>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">config.wayland.systemd.target</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;hyprland-session.target&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/quickshell.nix" target="_top">
+&lt;home-manager/modules/programs/quickshell.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -85937,29 +86852,25 @@ attribute set of (INI atom (null, bool, int, float or string) or attribute set o
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
 
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
-  {
-    actions = true;
-    anchor = &quot;top-right&quot;;
-    background-color = &quot;#000000&quot;;
-    border-color = &quot;#FFFFFF&quot;;
-    border-radius = 0;
-    default-timeout = 0;
-    font = &quot;monospace 10&quot;;
-    height = 100;
-    width = 300;
-    icons = true;
-    ignore-timeout = false;
-    layer = &quot;top&quot;;
-    margin = 10;
-    markup = true;
-  
-    # Section example
-    &quot;actionable=true&quot; = {
-      anchor = &quot;top-left&quot;;
-    };
-  }
-&#x27;&#x27;
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  &quot;actionable=true&quot; = {
+    anchor = &quot;top-left&quot;;
+  };
+  actions = true;
+  anchor = &quot;top-right&quot;;
+  background-color = &quot;#000000&quot;;
+  border-color = &quot;#FFFFFF&quot;;
+  border-radius = 0;
+  default-timeout = 0;
+  font = &quot;monospace 10&quot;;
+  height = 100;
+  icons = true;
+  ignore-timeout = false;
+  layer = &quot;top&quot;;
+  margin = 10;
+  markup = true;
+  width = 300;
+}
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -91157,6 +92068,30 @@ TOML value</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/podman-linux" target="_top">
+&lt;home-manager/modules/services/podman-linux&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.podman.settings.mounts"></a><a class="term" href="options.xhtml#opt-services.podman.settings.mounts"><code class="option">services.podman.settings.mounts</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>mounts.conf configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -107509,6 +108444,38 @@ boolean</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix" target="_top">
+&lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.sway.systemd.dbusImplementation"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.sway.systemd.dbusImplementation"><code class="option">wayland.windowManager.sway.systemd.dbusImplementation</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The D-Bus implementation used on the system.
+This affects which tool is used to import environment variables when starting the Sway session.
+On NixOS, this should match the value of the option <a class="link" href="https://nixos.org/manual/nixos/stable/options#opt-services.dbus.implementation"  target="_top"><code class="literal">services.dbus.implementation</code> (NixOS)</a>.
+When set to <code class="literal">dbus</code>, <code class="literal">dbus-update-activation-environment --systemd &lt;variables&gt;</code> is run.
+Otherwise, when set to <code class="literal">broker</code>, <code class="literal">systemctl --user import-environment &lt;variables&gt;</code> is run.
+See <a class="link" href="https://github.com/swaywm/sway/wiki#systemd-and-dbus-activation-environments"  target="_top">https://github.com/swaywm/sway/wiki#systemd-and-dbus-activation-environments</a> for more documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+one of “dbus”, “broker”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;dbus&quot;</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;broker&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
