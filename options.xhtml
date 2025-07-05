@@ -24643,7 +24643,9 @@ null or package <span class="emphasis"><em>(read only)</em></span></p>
 <p>The language packs to install. Available language codes can be found
 on the releases page:
 <code class="literal">https://releases.mozilla.org/pub/firefox/releases/${version}/linux-x86_64/xpi/</code>,
-replacing <code class="literal">${version}</code> with the version of Firefox you have.</p>
+replacing <code class="literal">${version}</code> with the version of Firefox you have. If
+the version string of your Firefox derivative diverts from the upstream
+version, try setting the <code class="literal">release</code> option.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of string</p>
@@ -26456,7 +26458,9 @@ null or package <span class="emphasis"><em>(read only)</em></span></p>
 <p>The language packs to install. Available language codes can be found
 on the releases page:
 <code class="literal">https://releases.mozilla.org/pub/firefox/releases/${version}/linux-x86_64/xpi/</code>,
-replacing <code class="literal">${version}</code> with the version of Floorp you have.</p>
+replacing <code class="literal">${version}</code> with the version of Floorp you have. If
+the version string of your Firefox derivative diverts from the upstream
+version, try setting the <code class="literal">release</code> option.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of string</p>
@@ -41811,7 +41815,9 @@ null or package <span class="emphasis"><em>(read only)</em></span></p>
 <p>The language packs to install. Available language codes can be found
 on the releases page:
 <code class="literal">https://releases.mozilla.org/pub/firefox/releases/${version}/linux-x86_64/xpi/</code>,
-replacing <code class="literal">${version}</code> with the version of LibreWolf you have.</p>
+replacing <code class="literal">${version}</code> with the version of LibreWolf you have. If
+the version string of your Firefox derivative diverts from the upstream
+version, try setting the <code class="literal">release</code> option.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of string</p>
@@ -46016,37 +46022,12 @@ package</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.msmtp.extraAccounts"></a><a class="term" href="options.xhtml#opt-programs.msmtp.extraAccounts"><code class="option">programs.msmtp.extraAccounts</code>
+ <a id="opt-programs.msmtp.configContent"></a><a class="term" href="options.xhtml#opt-programs.msmtp.configContent"><code class="option">programs.msmtp.configContent</code>
   </a>
  </span>
 </dt>
 <dd>
-<p>Extra configuration lines to add to the end of <code class="filename">~/.msmtprc</code>.
-See <a class="link" href="https://marlam.de/msmtp/msmtprc.txt"  target="_top">https://marlam.de/msmtp/msmtprc.txt</a> for examples.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n”</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;&quot;</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/msmtp" target="_top">
-&lt;home-manager/modules/programs/msmtp&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.msmtp.extraConfig"></a><a class="term" href="options.xhtml#opt-programs.msmtp.extraConfig"><code class="option">programs.msmtp.extraConfig</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Extra configuration lines to add to <code class="filename">~/.msmtprc</code>.
+<p>Content added to msmtp config.
 See <a class="link" href="https://marlam.de/msmtp/msmtprc.txt"  target="_top">https://marlam.de/msmtp/msmtprc.txt</a> for examples.</p><p>Note, if running msmtp fails with the error message “account default
 was already defined” then you probably have an account command here.
 Account commands should be placed in
@@ -46057,6 +46038,12 @@ strings concatenated with “\n”</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">&quot;&quot;</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">lib.mkOrder 1200 &#x27;&#x27;&#x27;
+  set syslog
+&#x27;&#x27;&#x27;;
+
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -49901,6 +49888,36 @@ null or package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.numbat.initFile"></a><a class="term" href="options.xhtml#opt-programs.numbat.initFile"><code class="option">programs.numbat.initFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>User initialization file (<code class="filename">init.nbt</code>) contents. May be specified
+inline or as a path to a source file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or strings concatenated with “\n” or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
+  unit kohm: ElectricResistance = kV/A
+&#x27;&#x27;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/numbat.nix" target="_top">
+&lt;home-manager/modules/programs/numbat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.numbat.settings"></a><a class="term" href="options.xhtml#opt-programs.numbat.settings"><code class="option">programs.numbat.settings</code>
   </a>
  </span>
@@ -52485,6 +52502,91 @@ package</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/opam.nix" target="_top">
 &lt;home-manager/modules/programs/opam.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.opencode.enable"></a><a class="term" href="options.xhtml#opt-programs.opencode.enable"><code class="option">programs.opencode.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable opencode.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/opencode.nix" target="_top">
+&lt;home-manager/modules/programs/opencode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.opencode.package"></a><a class="term" href="options.xhtml#opt-programs.opencode.package"><code class="option">programs.opencode.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The opencode package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.opencode</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/opencode.nix" target="_top">
+&lt;home-manager/modules/programs/opencode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.opencode.settings"></a><a class="term" href="options.xhtml#opt-programs.opencode.settings"><code class="option">programs.opencode.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to <code class="filename">$XDG_CONFIG_HOME/opencode/config.json</code>.
+See <a class="link" href="https://opencode.ai/docs/config/"  target="_top">https://opencode.ai/docs/config/</a> for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  theme = &quot;opencode&quot;;
+  model = &quot;anthropic/claude-sonnet-4-20250514&quot;;
+  autoshare = false;
+  autoupdate = true;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/opencode.nix" target="_top">
+&lt;home-manager/modules/programs/opencode.nix&gt;
 </a></code>
 </td></tr>
 </table>
