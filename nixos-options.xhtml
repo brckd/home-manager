@@ -57,6 +57,34 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="nixos-opt-home-manager.backupCommand"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.backupCommand"><code class="option">home-manager.backupCommand</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>On activation run this command on each existing file
+rather than exiting with an error.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">${pkgs.trash-cli}/bin/trash</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/nixos/common.nix" target="_top">
+&lt;home-manager/nixos/common.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="nixos-opt-home-manager.backupFileExtension"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.backupFileExtension"><code class="option">home-manager.backupFileExtension</code>
   </a>
  </span>
@@ -113,6 +141,64 @@ attribute set</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="nixos-opt-home-manager.minimal"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.minimal"><code class="option">home-manager.minimal</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable only the necessary modules that allow home-manager to function.</p><p>This can be used to allow vendoring a minimal list of modules yourself, rather than
+importing every single module.</p><p>THIS IS FOR ADVANCED USERS, AND WILL DISABLE ALMOST EVERY MODULE.
+THIS SHOULD NOT BE ENABLED UNLESS YOU KNOW THE IMPLICATIONS.
+.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/nixos/common.nix" target="_top">
+&lt;home-manager/nixos/common.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="nixos-opt-home-manager.overwriteBackup"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.overwriteBackup"><code class="option">home-manager.overwriteBackup</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable forced overwriting of existing backup files when using <code class="literal">backupFileExtension</code>
+.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/nixos/common.nix" target="_top">
+&lt;home-manager/nixos/common.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="nixos-opt-home-manager.sharedModules"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.sharedModules"><code class="option">home-manager.sharedModules</code>
   </a>
  </span>
@@ -134,6 +220,39 @@ list of raw value</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/nixos/common.nix" target="_top">
 &lt;home-manager/nixos/common.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="nixos-opt-home-manager.startAsUserService"></a><a class="term" href="nixos-options.xhtml#nixos-opt-home-manager.startAsUserService"><code class="option">home-manager.startAsUserService</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to activate each user’s environment on demand, when
+they log in, using a systemd user service.  If this option is
+off, all configured users’ environments are instead activated
+during boot-up.</p><p>This option needs to be turned on in any situation where users’
+home directories are not available until they log in; for
+example, when using pam_mount.</p><p>Other usage scenarios are still experimental.  It may speed up
+boot when there are many users; this has not yet been confirmed.
+It could break configurations where the configured users do not
+(or do not always) run their processes within a complete
+systemd-managed user context.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/nixos" target="_top">
+&lt;home-manager/nixos&gt;
 </a></code>
 </td></tr>
 </table>
